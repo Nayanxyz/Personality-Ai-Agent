@@ -46,3 +46,24 @@ Part 2: The LangChain Orchestration (The Engine)
                                                   then into the LLM, and finally through the string parser before returning to
                                                   the user.
 
+Part 3: The Gradio Interface (The Frontend)
+
+    Gradio is the library used to instantly generate a web-based graphical user interface (GUI) without writing HTML or CSS.
+
+    Classes & Methods
+
+        gr.Blocks(): The master container. It creates the blank web page layout that will hold the chatbot elements.
+
+        gr.Markdown: A text rendering tool. It is used to display the static welcome message at the top of the interface.
+
+        gr.Chatbot: The primary visual window. It is specifically designed to render back-and-forth conversational
+                    bubbles between a user and an AI.
+
+        gr.Textbox: The input field. It allows the human user to type their question.
+
+        gr.Button: A clickable interface element. Used here to trigger the screen-clearing function.
+
+        page.launch(): The execution command. It turns on a local web server and renders the interface
+                       in a web browser. The share=True argument generates a temporary public link so the local app
+                       can be accessed over the internet.
+
