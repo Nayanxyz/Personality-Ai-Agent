@@ -1,0 +1,17 @@
+Part 1: The Environment & System Logic
+
+    Libraries
+
+        dotenv (load_dotenv): A configuration utility. It is used to securely load hidden environment
+                              variables from a local .env file into the computer's temporary memory,
+                              preventing API keys from being hardcoded in plain text.
+
+        os: A system-level library. It is used specifically via os.getenv() to retrieve the API key that
+            load_dotenv just placed into the system's memory.
+
+    Variables
+
+        system_prompt: A static string variable. It contains the highly detailed behavioral constraints,
+                       historical context, and persona instructions that force the underlying AI to act
+                       strictly as Sir Isaac Newton.
+
