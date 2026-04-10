@@ -15,3 +15,34 @@ Part 1: The Environment & System Logic
                        historical context, and persona instructions that force the underlying AI to act
                        strictly as Sir Isaac Newton.
 
+Part 2: The LangChain Orchestration (The Engine)
+
+    LangChain is the framework used to chain different AI components together so they operate as a single machine.
+
+    Classes & Modules
+
+        ChatGoogleGenerativeAI: The specific communication bridge. It connects the Python script directly
+                                to Google's Gemini models.
+
+        ChatPromptTemplate: A dynamic text blueprint. It structures the conversation exactly how the AI needs
+                            to read it, separating the hidden system instructions, the historical context,
+                            and the newest user input.
+
+        MessagesPlaceholder: A dynamic injection point. It acts as a designated empty space inside the
+                             ChatPromptTemplate where the entire history of the conversation will be dynamically
+                             inserted before being sent to the AI.
+
+        HumanMessage & AIMessage: Standardized data wrappers. LangChain requires all chat history to be categorized
+                                  as either something a human said or something the AI said. These classes format the
+                                  raw text into the strict structure the LLM expects.
+
+        StrOutputParser: A formatting tool. When the AI generates a response, it often comes back as a complex
+                         data object. This parser strips away the metadata and extracts only the raw, readable string text.
+
+    The Pipeline
+
+        chain = prompt | llm | StrOutputParser(): This is LangChain Expression Language (LCEL). It physically links the
+                                                  components. It dictates that data must flow first into the prompt template,
+                                                  then into the LLM, and finally through the string parser before returning to
+                                                  the user.
+
