@@ -14,3 +14,25 @@ An interactive, persona-driven artificial intelligence agent designed to emulate
 * **Interface:** Gradio
 * **Environment Management:** `python-dotenv`
 
+## 🚀 Installation & Execution
+
+Follow these strict deployment protocols to run the agent locally.
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Nayanxyz/Personality-Ai-Agent.git
+cd Personality-Ai-Agent
+```
+### 2. Install Dependencies
+```bash
+pip install langchain gradio
+python-dotenv openai
+```
+### 3. Create a .env file in the root and paste
+```bash
+GEMINI_API_KEY=your_secure_api_key
+```
+### 4. Initialize the Agent
+```bash
+puthon main.py
+```
