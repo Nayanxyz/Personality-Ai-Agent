@@ -69,6 +69,11 @@ def chat(user_input, hist):
                        {"role": "assistant", "content": response}]
 
 
+def clear_chat():
+    return "", []                                                              #"" for clearing textbox,[] for clearing chatbot area
+
+page = gr.Blocks(title="Chat with Newton")                                                   #Blocks method for title
+
 
 
 
