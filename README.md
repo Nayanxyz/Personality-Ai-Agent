@@ -8,3 +8,9 @@ An interactive, persona-driven artificial intelligence agent designed to emulate
 * **Frontend Interface:** Deployed using Gradio for a lightweight, interactive, and easily shareable web-based chat UI.
 * **State & Security:** Strict separation of configuration and code. LLM provider API keys are managed exclusively via environment variables to prevent cryptographic exposure.
 
+## 🛠️ Tech Stack
+* **Language:** Python 3.10+
+* **AI/Orchestration:** LangChain
+* **Interface:** Gradio
+* **Environment Management:** `python-dotenv`
+
