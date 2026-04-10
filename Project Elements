@@ -67,3 +67,26 @@ Part 3: The Gradio Interface (The Frontend)
                        in a web browser. The share=True argument generates a temporary public link so the local app
                        can be accessed over the internet.
 
+Part 4: The Custom Functions (The Data Bridge)
+
+    Function: chat(user_input, hist)
+
+        Definition: The operational brain of the application. It acts as the translator between the visual
+                    Gradio interface and the backend LangChain engine.
+
+        Arguments: * user_input: The raw text the user just typed into the Gradio textbox.
+
+        hist: The current visual history of the chat, provided automatically by Gradio as a list of dictionaries.
+
+        Usage: It iterates through Gradio's history format, translates it into LangChain's strict
+               HumanMessage/AIMessage format, and appends it to a list. It then invokes the LangChain pipeline,
+               passing the new input and the translated history to the LLM. Finally, it returns an empty string
+               (which instantly clears the user's typing box) and the newly updated chat history so Gradio can
+               render the new bubbles on the screen.
+
+    Function: clear_chat()
+
+        Definition: A state-reset mechanism.
+
+        Usage: When triggered, it simply returns two empty strings/lists, which forces the Gradio interface
+               to wipe the visible chat history and empty the input box.
