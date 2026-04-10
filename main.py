@@ -51,3 +51,25 @@ prompt = ChatPromptTemplate([
 )
 
 chain = prompt | llm | StrOutputParser()                                          #prompt 's output is llm 's input
+
+print("Hello, I am Isaac, what do you wish to ask me?")
+
+def chat(user_input, hist):
+
+    langchain_history=[]
+    for item in hist:
+        if item["role"] == "user":
+            langchain_history.append(HumanMessage(content=item["content"]))
+        elif item["role"] == "assistant":
+            langchain_history.append(AIMessage(content=item["content"]))
+
+    response = chain.invoke({"input": user_input, "history": langchain_history})
+
+    return "", hist + [{"role": "user", "content": user_input},
+                       {"role": "assistant", "content": response}]
+
+
+
+
+
+page.launch(theme=gr.themes.Soft(),share=True)
