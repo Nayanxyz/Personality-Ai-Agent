@@ -2,6 +2,8 @@
 
 An interactive, persona-driven artificial intelligence agent designed to emulate the analytical rigor, historical context, and distinct temperament of Sir Isaac Newton. Built with Python and LangChain, this agent processes user queries through the lens of classical mechanics, calculus, and 17th-century natural philosophy, delivered via a responsive Gradio web interface.
 
+<img width="1882" height="815" alt="Newton-ai-agent" src="https://github.com/user-attachments/assets/653f9ca6-5dd3-4b98-89fa-29252a2ad68c" />
+
 ## 🧠 Engineering Architecture
 * **Core Logic (LLM Framework):** Powered by LangChain, utilizing custom prompt templates to enforce strict persona boundaries, ensuring the agent remains historically accurate and computationally rigorous.
 * **Memory Management:** Implements conversational buffer memory to allow for multi-turn mathematical discourse and contextual follow-up questions.
