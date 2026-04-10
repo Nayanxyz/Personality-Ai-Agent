@@ -74,7 +74,20 @@ def clear_chat():
 
 page = gr.Blocks(title="Chat with Newton")                                                   #Blocks method for title
 
+with page:
+    gr.Markdown(""" 
+    # Chat with Isaac Newton
+    welcome to the private chat with Isaac. Let your questions flow and don't hold back
+    """)
 
+    chatbot = gr.Chatbot(show_label=False)
+
+    msg = gr.Textbox(show_label=False, placeholder="ask anything...")
+
+    msg.submit(chat, [msg, chatbot],[msg, chatbot])                  #submit method takes two args
+
+    clear = gr.Button("Clear Chat", variant="secondary")
+    clear.click(clear_chat, outputs=[msg, chatbot])                              #gradio knows which widget to update/clear that is msg and chatbot
 
 
 page.launch(theme=gr.themes.Soft(),share=True)
