@@ -88,4 +88,4 @@ with page:
     clear.click(clear_chat, outputs=[msg, chatbot])                              #gradio knows which widget to update/clear that is msg and chatbot
 
 
-page.launch(theme=gr.themes.Monochrome(),share=True)
+page.launch(theme=gr.themes.Default(),share=True)
