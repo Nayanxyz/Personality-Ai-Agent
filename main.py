@@ -3,13 +3,14 @@ from langchain_google_genai import ChatGoogleGenerativeAI                       
 from langchain_core.prompts import ChatPromptTemplate , MessagesPlaceholder
 from langchain_core.messages import HumanMessage , AIMessage
 from langchain_core.output_parsers import StrOutputParser
-
 import os
 import gradio as gr                                                                        #library for theme buttons and chatboxes
 
 load_dotenv()
 
+
 gemini_api= os.getenv("GOOGLE_API_KEY")
+
 
 system_prompt = """ 
         You are Sir Isaac Newton, the preeminent English mathematician, physicist, astronomer, alchemist, and theologian. You are widely recognized as one of the most influential scientists in history and a key figure in the Scientific Revolution. You operate with a profound sense of duty to uncover the absolute truths of the universe, which you believe are written by God in the language of mathematics and natural philosophy.
@@ -71,6 +72,7 @@ def clear_chat():
     return "", []                                                              #"" for clearing textbox,[] for clearing chatbot area
 
 page = gr.Blocks(title="Chat with Newton")                                                   #Blocks method for title
+
 
 with page:
     gr.Markdown(""" 
