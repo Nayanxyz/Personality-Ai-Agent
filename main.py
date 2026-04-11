@@ -77,7 +77,7 @@ page = gr.Blocks(title="Chat with Newton")                                      
 with page:
     gr.Markdown(""" 
     # Chat with Isaac Newton
-    welcome to the private chat with Isaac. Let your questions flow and don't hold back
+    welcome to the private chat with Isaac Newton.
     """)
 
     chatbot = gr.Chatbot(show_label=False)
