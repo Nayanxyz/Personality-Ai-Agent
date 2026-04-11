@@ -50,7 +50,7 @@ prompt = ChatPromptTemplate([
 
 chain = prompt | llm | StrOutputParser()                                          #prompt 's output is llm 's input
 
-print("Hello, I am Isaac, what do you wish to ask me?")
+
 
 def chat(user_input, hist):
 
